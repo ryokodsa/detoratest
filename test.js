@@ -1,20 +1,11 @@
-// 1-9の間をとる数の個数
-head_num = 4;
-
-// 0-9の間をとる数の個数
-body_num = 6;
-
-// 数が満たすべき関係式
-target_func = function (
-	R,E,A,D,W,I,T,L,K,S // 1-9の間をとる数を最初にまとめて引数とする
-){
-	return (
-		dig2num( R,E,A,D )
-        +
-        dig2num( W,R,I,T,E )
-        +
-        dig2num (T,A,L,K)
-		==
-		dig2num( S, K, I, L, L )
-	);
+const convertVal = (str, charVal) => {
+  let val = 0;
+  for (let i = 0; i < str.length; ++i) {
+    val = val * 10 + charVal.get(str[i]);
+  }
+  return val;
 };
+
+if (R*1000 + E*100 + A*10 + D + W*10000 + R*1000 + I*100 + T*10 + E + T*1000 + A*100 + L*10 + K === S*1000 + K*100 + I*100 + L*10 + L) {
+	console.log(true)
+}
